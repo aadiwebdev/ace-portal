@@ -7,6 +7,6 @@ app.use(express.static(path.join(__dirname,'public'),{extended:false}));
 app.use('/',(req,res,next)=>{
     res.render('index');
 })
-app.listen(3000,()=>{
-    console.log("HI welcome to express Js\n");
+app.listen(process.env.PORT||3000,()=>{
+   // console.log("HI welcome to express Js\n");
 });
