@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   
+    <meta charset="utf-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ace Student</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="ace student portal">
+    <meta name="author" content="fudio">
+    
+    <link rel="shortcut icon" href="img/ACE.jpg" type="image/x-icon">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+
+  
+    <link rel="stylesheet" href="css/nivo-lightbox.css" >
+    <link rel="stylesheet" href="css/nivo_lightbox_themes/default/default.css">
+
+
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css"  href="css/style1.css">
+    <link rel="stylesheet" type="text/css" href="css/animate1.css">
+
+    <!-- Google Fonts
+    ================================================== -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+
+    <script>
+    $(document).ready(function(){
+      $("#sid").click(function(){
+        $(".main-login").css("display","none");
+        $(".student-modal").css("display","block");
+      });
+      $("#fid").click(function(){
+        $(".main-login").css("display","none");
+        $(".faculty-modal").css("display","block");
+      });
+      $("#pid").click(function(){
+        $(".main-login").css("display","none");
+        $(".parent-modal").css("display","block");
+      });
+      $("#adminid").click(function(){
+        $(".main-login").css("display","none");
+        $(".admin-modal").css("display","block");
+      });
+    });
+    </script>
+    <script>
+      function startLogin()
+      {
+        $(".trans_mainpage").fadeIn("fast");
+      }
+      function closeModal()
+      {
+        $(".trans_mainpage").fadeOut("fast");
+      }
+
+    </script>
+   
+  </head>
+  <body>
+    <div class="trans_mainpage">
+        <span class="close" onclick="closeModal()">&times;</span>
+      <div class="main-login">
+    <div class="login-box animated fadeInUp"style="display: block">
+			<div class="box-header">
+				<h2>Are you a ??</h2>
+			</div>
+			<div class="row pad-10">
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-one" id ="sid">Student Login</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-two" id ="pid">Parent Login</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-three" id ="fid">Faculty Login</a> </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 row-100"> <a href="#" class="btn btn-sm animated-button victoria-four" id ="adminid">Admin Login</a> </div>
+  </div>
+    </div>
+  </div>
+    <div class="faculty-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Faculty Login</h2>
+        </div>
+        <form action="/faculty" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="email">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+        </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div>
+    <div class="student-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Student Login</h2>
+        </div>
+        <form action="/student" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="email">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+      </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div>
+    <div class="admin-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Admin Login</h2>
+        </div>
+        <form action="/admin" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="email">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+      </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div> 
+    <div class="parent-modal" style="display:none">
+      <div class="login-box animated fadeInUp">
+        <div class="box-header">
+          <h2>Parent Login</h2>
+        </div>
+        <form action="/parent" method="post">
+        <label for="username">Username</label>
+        <br/>
+        <input type="text" id="username" name="email">
+        <br/>
+        <label for="password">Password</label>
+        <br/>
+        <input type="password" id="password" name="password">
+        <br/>
+        <button type="submit">Sign In</button>
+        <br/>
+        </form>
+        <a href="#"><p class="small">Forgot your password?</p></a>
+      </div>
+    </div>
+</div>
+     
+
+    <!-- Main Navigation 
+    ================================================== -->
+    <%- include('./main-nav.ejs')%>
+
+    <!-- Home Section
+    ================================================== -->
+    <%- include('./home.ejs')%>
+
+    <!-- Intro Section
+    ================================================== -->
+    <%- include('./intro.ejs')%>
+
+    <!-- my info pillagada
+    ================================================== -->
+    <%- include('./my-info.ejs')%>
+    <!-- time table Section
+    ================================================== -->
+    <%- include('./timetable.ejs')%>
+    <!-- news
+    ================================================== -->
+    <%- include('./news.ejs')%>
+    <!-- notices============================= -->
+    <%- include('./notices.ejs')%>
+    <!-- Contact 
+    ================================================== -->
+    <%- include('./contact.ejs')%>
+    <!-- Footer 
+    ================================================== -->
+    <%- include('./footer.ejs')%>
+    
+
+
+    
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+
+   
+
+    <!-- Parallax Effects -->
+    <script type="text/javascript" src="js/skrollr.js"></script>
+    <script type="text/javascript" src="js/imagesloaded.js"></script>
+
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+
+    <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+
+    <script type="text/javascript" src="js/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+    
+
+  </body>
+</html>
